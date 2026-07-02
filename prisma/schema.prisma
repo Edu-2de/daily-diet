@@ -22,7 +22,7 @@ model Meal {
   id          String   @id @default(uuid())
   name        String
   description String
-  Date        DateTime
+  date        DateTime
   onDiet      Boolean  @map("on_diet")
   userId      String   @map("user_id")
 
