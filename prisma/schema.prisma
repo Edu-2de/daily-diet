@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String @id @default(uuid())
+  name          String
+  email         String @unique
+  password      String
+  profilePicUrl String @map("profile_pic_url")
+  meals         Meal[]
+
+  @@map("users")
+}
+
+model Meal {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  Date        DateTime
+  onDiet      Boolean  @map("on_diet")
+  userId      String   @map("user_id")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("meals")
+}
