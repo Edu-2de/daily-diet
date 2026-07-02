@@ -8,7 +8,7 @@ export class InMemoryUsersRepository implements UsersRepository {
 
   constructor() {}
 
-  async register(data: UserCreateInput): Promise<User> {
+  async register(data: UserCreateInput) {
     const user = {
       id: randomUUID(),
       name: data.name,
@@ -22,7 +22,11 @@ export class InMemoryUsersRepository implements UsersRepository {
     return user;
   }
 
-  async findByEmail(email: string): Promise<User | null> {
-    throw new Error('Method not implemented.');
+  async findByEmail(email: string) {
+    const userWithSameEmail = this.items.find((item) => item.email === email);
+    if (!userWithSameEmail) {
+      return;
+    }
+    return userWithSameEmail;
   }
 }
