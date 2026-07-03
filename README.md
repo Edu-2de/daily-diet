@@ -4,8 +4,6 @@ API for tracking daily diet
 
 ## Functional Requirements
 
-:rocket:
-
 - [x] It must be possible to create a user
 - [x] It must be possible to log a meal, including the following information:
   - Name
