@@ -50,7 +50,10 @@ export class InMemoryMealsRepository implements MealsRepository {
   }
 
   async findManyByUserId(userId: string) {
-    const meals = this.items.filter((meal) => meal.userId === userId);
+    const meals = this.items
+      .filter((meal) => meal.userId === userId)
+      .sort((a, b) => a.date.getTime() - b.date.getTime());
+
     return meals;
   }
 }

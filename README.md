@@ -14,7 +14,7 @@ API for tracking daily diet
 - [x] It must be possible to delete a meal
 - [x] It must be possible to list all of a user’s meals
 - [x] It must be possible to view a single meal
-- [ ] It must be possible to retrieve a user’s metrics
+- [x] It must be possible to retrieve a user’s metrics
   - Total number of recorded meals
   - Total number of meals within the diet
   - Total number of meals outside the diet
