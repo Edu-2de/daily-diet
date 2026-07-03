@@ -13,7 +13,7 @@ API for tracking daily diet
   - Date and Time
   - Whether or not it is part of the diet
 - [x] It must be possible to edit a meal, allowing all of the above data to be changed
-- [ ] It must be possible to delete a meal
+- [x] It must be possible to delete a meal
 - [ ] It must be possible to list all of a user’s meals
 - [ ] It must be possible to view a single meal
 - [ ] It must be possible to retrieve a user’s metrics

@@ -6,4 +6,5 @@ export interface MealsRepository {
   save(meal: Meal): Promise<Meal>;
   findById(id: string): Promise<Meal | void>;
   delete(id: string): Promise<void>;
+  findManyByUserId(userId: string): Promise<Meal[]>;
 }

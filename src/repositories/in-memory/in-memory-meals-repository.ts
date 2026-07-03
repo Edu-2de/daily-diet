@@ -48,4 +48,9 @@ export class InMemoryMealsRepository implements MealsRepository {
       return meal.id !== id;
     });
   }
+
+  async findManyByUserId(userId: string) {
+    const meals = this.items.filter((meal) => meal.userId === userId);
+    return meals;
+  }
 }
