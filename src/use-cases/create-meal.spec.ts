@@ -18,7 +18,7 @@ describe('Create Meal Use Case', () => {
   });
 
   it('should be able an user create a meal', async () => {
-    const user = await usersRepository.register({
+    const user = await usersRepository.create({
       name: 'John Doe',
       email: 'johnDoe@email.com',
       password: '123456',

@@ -8,7 +8,7 @@ export class InMemoryUsersRepository implements UsersRepository {
 
   constructor() {}
 
-  async register(data: UserCreateInput) {
+  async create(data: UserCreateInput) {
     const user = {
       id: randomUUID(),
       name: data.name,

@@ -30,7 +30,7 @@ export class RegisterUseCase {
 
     const passwordHash = await bcrypt.hash(password, 6);
 
-    const user = await this.usersRepository.register({
+    const user = await this.usersRepository.create({
       name,
       email,
       password: passwordHash,

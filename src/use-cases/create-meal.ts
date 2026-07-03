@@ -1,6 +1,7 @@
 import type { Meal } from '../generated/prisma/client';
 import type { MealsRepository } from '../repositories/meals-repository';
 import type { UsersRepository } from '../repositories/users-repository';
+import { UserNotFoundError } from './errors/user-not-found-error';
 
 export interface CreateMealUseCaseRequest {
   name: string;
@@ -29,7 +30,7 @@ export class CreateMealUseCase {
   }: CreateMealUseCaseRequest): Promise<CreateMealUseCaseResponse> {
     const foundUser = await this.usersRepository.findById(userId);
     if (!foundUser) {
-      throw new Error();
+      throw new UserNotFoundError();
     }
 
     const meal = await this.mealRepository.create({
