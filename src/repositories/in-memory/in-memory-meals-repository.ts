@@ -22,4 +22,30 @@ export class InMemoryMealsRepository implements MealsRepository {
 
     return meal;
   }
+
+  async save(meal: Meal) {
+    const mealToUpdate = this.items.findIndex(
+      (mealItem) => mealItem.id === meal.id,
+    );
+
+    if (mealToUpdate >= 0) {
+      this.items[mealToUpdate] = meal;
+    }
+
+    return meal;
+  }
+
+  async findById(id: string) {
+    const meal = this.items.find((meal) => meal.id === id);
+    if (!meal) {
+      return;
+    }
+    return meal;
+  }
+
+  async delete(id: string) {
+    this.items = this.items.filter((meal) => {
+      return meal.id !== id;
+    });
+  }
 }

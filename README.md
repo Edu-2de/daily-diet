@@ -7,12 +7,12 @@ API for tracking daily diet
 :rocket:
 
 - [x] It must be possible to create a user
-- [ ] It must be possible to log a meal, including the following information:
+- [x] It must be possible to log a meal, including the following information:
   - Name
   - Description
   - Date and Time
   - Whether or not it is part of the diet
-- [ ] It must be possible to edit a meal, allowing all of the above data to be changed
+- [x] It must be possible to edit a meal, allowing all of the above data to be changed
 - [ ] It must be possible to delete a meal
 - [ ] It must be possible to list all of a user’s meals
 - [ ] It must be possible to view a single meal
