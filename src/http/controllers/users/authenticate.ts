@@ -21,7 +21,7 @@ export async function authenticate(
       password,
     });
 
-    const token = reply.jwtSign({ sub: user.id });
+    const token = await reply.jwtSign({ sub: user.id });
 
     return reply.status(200).send({ token });
   } catch (err) {
