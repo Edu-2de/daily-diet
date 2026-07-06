@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsup src --outdir-dir build",
-    "test": "vitest run"
+    "test": "vitest run --project unit",
+    "test:e2e": "vitest run --project e2e"
   },
   "keywords": [],
   "author": "",
@@ -39,6 +40,7 @@
     "dotenv": "^17.4.2",
     "fastify": "^5.8.5",
     "pg": "^8.22.0",
+    "vitest-environment-prisma": "file:prisma/vitest-environment-prisma",
     "zod": "^4.4.3"
   }
 }

@@ -228,6 +228,9 @@ importers:
       pg:
         specifier: ^8.22.0
         version: 8.22.0
+      vitest-environment-prisma:
+        specifier: file:prisma/vitest-environment-prisma
+        version: file:prisma/vitest-environment-prisma
       zod:
         specifier: ^4.4.3
         version: 4.4.3
@@ -2127,6 +2130,9 @@ packages:
       yaml:
         optional: true
 
+  vitest-environment-prisma@file:prisma/vitest-environment-prisma:
+    resolution: {directory: prisma/vitest-environment-prisma, type: directory}
+
   vitest@4.1.9:
     resolution: {integrity: sha512-nE3/LEyc0z87uHYLZebqCUOaJr2hdtuPp7BQ4BosVFnfltxgAvMG08NyrSGlPpOUWvR27c5flSmYFTNr78L9GQ==}
     engines: {node: ^20.0.0 || ^22.0.0 || >=24.0.0}
@@ -3814,6 +3820,8 @@ snapshots:
       fsevents: 2.3.3
       jiti: 2.7.0
       tsx: 4.22.4
+
+  vitest-environment-prisma@file:prisma/vitest-environment-prisma: {}
 
   vitest@4.1.9(@types/node@26.1.0)(vite@8.1.2(@types/node@26.1.0)(esbuild@0.27.7)(jiti@2.7.0)(tsx@4.22.4)):
     dependencies:
