@@ -2,6 +2,7 @@ import request from 'supertest';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { app } from '../../../app';
 import { createAndAuthenticateUser } from '../../../utils/test/create-and-authenticate-user';
+import { createMeal } from '../../../utils/test/create-meal';
 
 describe('Fetch Meal By Id (e2e)', () => {
   beforeAll(async () => {
@@ -14,18 +15,7 @@ describe('Fetch Meal By Id (e2e)', () => {
 
   it('should be able to get an meal', async () => {
     const { token } = await createAndAuthenticateUser(app);
-
-    const createMeal = await request(app.server)
-      .post('/meals')
-      .set('Authorization', `Bearer ${token}`)
-      .send({
-        name: 'name',
-        description: 'description',
-        date: '07/07/2026',
-        onDiet: true,
-      });
-
-    const { meal } = createMeal.body;
+    const { meal } = await createMeal(app, token);
 
     const response = await request(app.server)
       .get(`/meals/${meal.id}`)
