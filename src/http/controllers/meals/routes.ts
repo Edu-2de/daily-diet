@@ -3,6 +3,7 @@ import { verifyJWT } from '../../middlewares/verify-jwt';
 import { create } from './create';
 import { deleteMeal } from './delete';
 import { fetchMealById } from './fetch-by-id';
+import { fetchManyByUser } from './fetch-many-by-user';
 
 export async function mealsRoutes(app: FastifyInstance) {
   app.addHook('onRequest', verifyJWT);
@@ -10,4 +11,5 @@ export async function mealsRoutes(app: FastifyInstance) {
   app.post('/meals', create);
   app.delete('/meals/:id', deleteMeal);
   app.get('/meals/:id', fetchMealById);
+  app.get('/meals', fetchManyByUser);
 }
