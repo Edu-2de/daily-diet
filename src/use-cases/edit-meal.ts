@@ -6,10 +6,10 @@ import { NotAllowedError } from './errors/not-allowed-error';
 export interface EditeMealUseCaseRequest {
   userId: string;
   mealId: string;
-  name?: string;
-  description?: string;
-  onDiet?: boolean;
-  date?: Date | string;
+  name?: string | undefined;
+  description?: string | undefined;
+  onDiet?: boolean | undefined;
+  date?: Date | string | undefined;
 }
 export interface EditMealUseCaseResponse {
   meal: Meal;
