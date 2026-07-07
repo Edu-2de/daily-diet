@@ -16,16 +16,14 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
 
   try {
     const userId = request.user.sub;
-    const createMealsUseCase = await makeCreateMealUseCase();
-    createMealsUseCase.execute({
+    const createMealsUseCase = makeCreateMealUseCase();
+    await createMealsUseCase.execute({
       name,
       description,
       date,
       onDiet,
       userId,
     });
-
-    return reply.status(201);
   } catch (err) {
     if (err instanceof ZodError) {
       return reply.status(409).send({
@@ -34,4 +32,6 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
     }
     throw err;
   }
+
+  return reply.status(201).send();
 }
